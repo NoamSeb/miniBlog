@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mini Blog</title>
+</head>
+<style>
+    nav {
+        width: 100vw;
+    }
+    
+    nav ul {
+        float: left;
+    }
+    
+    .backhome {
+        color: black;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    div {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        border-radius: 10px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .connect {
+        background-color: white;
+        border: black solid 1px;
+        color: black;
+        transition-property: background-color border color;
+        transition-duration: 0.5s;
+    }
+    
+    .connect:hover {
+        background-color: deepskyblue;
+        border: white solid 1px;
+        color: white;
+        transition-property: background-color border color;
+        transition-duration: 0.5s;
+    }
+    
+    .create {
+        background-color: black;
+        border: white solid 1px;
+        color: white;
+        transition-property: background-color border color;
+        transition-duration: 0.5s;
+    }
+    
+    .create:hover {
+        background-color: blue;
+        /* border: black solid 1px; */
+        color: whiote;
+        transition-property: background-color border color;
+        transition-duration: 0.5s;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul><a href="index.php" class="backHome">Back home</a></ul>
+    </nav>
+    <main>
+        <a href="views/connectUser.php">
+            <div class="connect">
+                <p>Connexion</p>
+            </div>
+        </a>
+        <a href="views/createUser.php">
+            <div class="create">
+                <p>s'inscrire</p>
+            </div>
+        </a>
+    </main>
+</body>
+
+</html>
