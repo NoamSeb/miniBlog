@@ -1,14 +1,13 @@
 <?php
 require('../model.php');
 
-$result=createUser();
-if ($result ==2){
-    include('./views/connectUser.php');
+$result = connectUser();
+if ($result == false){
+    require_once ('../views/connexion.php');
 }else{
-    include('./views/createUser.php');
+    session_start();
+    $_SESSION['login']=$result['login'];
+    $_SESSION['id']=$result['id_user'];
+    header('location: ../index.php');
 }
-
-if(createUser()){
-    header("index.php");
-}
-?>
+ 

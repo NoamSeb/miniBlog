@@ -9,15 +9,17 @@
 </head>
 
 <body>
-    <form action="/miniBlog/controllers/connexion.php" method="POST">
+    <form action="/miniBlog/controllers/register.php" method="POST">
         <label for="name">Entrez votre nom*</label>
         <input type="text" id="name" name="name" required>
         <label for="firstName">Entrez votre prénom*</label>
         <input type="text" id="firstName" name="firstName" required>
+        <label for="firstName">Entrez votre adresse email*</label>
+        <input type="email" id="mail" name="mail" required>
         <label for="login">Entrez votre login*</label>
         <input type="text" id="login" name="login" required>
         <?php if(isset($result) && ($result==1)){
-            echo("Ce login est déjà utilisé, veuillez changer de login ou vous connecter.");
+            echo "Ce login est déjà utilisé, veuillez changer de login ou vous connecter.";
         }
         ?>
         <label for="PWD">Entrez votre mot de passe*</label>
@@ -25,11 +27,9 @@
         <label for="PWDCheck">Confirmez le mot de passe*</label>
         <input type="password" id="PWDCheck" name="PWDCheck" required>
         <?php if(isset($result) && ($result==3)){
-            echo("Les mots de passe sont différents.");
+            echo "Les mots de passe sont différents.";
         }
         ?>
-        <label for="city">Entrez votre ville de résidence</label>
-        <input type="text" id="city" name="city">
         <input type="submit" value="créer utilisateur">
     </form>
 </body>
