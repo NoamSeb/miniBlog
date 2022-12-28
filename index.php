@@ -23,8 +23,7 @@
         </form>
     <?php } ?>
     <?php
-    if (isset($_SESSION['id'])==1) {
-        echo ("Bonjour " . $_SESSION['login']); ?>
+    if (isset($_SESSION['id'])==1) { ?>
     <a href="./controllers/addarticle.php">Créer un article</a>
     <?php } ?>
 

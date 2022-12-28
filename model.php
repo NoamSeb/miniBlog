@@ -95,3 +95,31 @@ function addarticle(){
     return $prep->execute();
 
 }
+
+function getComments(){
+    $db = dbConnect();
+    $query = $db->query("SELECT * FROM commentaires");
+    return $query->fetchall(PDO::FETCH_ASSOC);
+}
+
+function addComment(){
+    $db = dbConnect();
+    
+    $requete = "SELECT * FROM commentaire";
+    $stmt = $db->query($requete);
+    $stmt->fetchAll(PDO::FETCH_ASSOC);
+   
+    $idUser = $_SESSION['id'];
+    $idArticle= $_GET['id'];
+    $contenu = $_POST["contenuComment"];  
+    $date = (new \DateTime('now'))->format('d-m-Y');
+
+    $insertComment = "INSERT INTO articles (ext_id_user, ext_id_article, contenu_commentaire, date_commentaire) VALUES (:article, :contenu, :date)";
+
+    $prep = $db->prepare($insertComment);
+    $prep->bindParam('ext_id_user', $idUser, PDO::PARAM_STR);
+    $prep->bindParam('ext_id_article', $idArticle, PDO::PARAM_STR);
+    $prep->bindParam('contenu_commentaire', $contenu, PDO::PARAM_STR);
+    $prep->bindParam('date_commentaire', $date, PDO::PARAM_STR);
+    return $prep->execute();
+}

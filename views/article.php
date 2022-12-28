@@ -15,5 +15,8 @@
     <h1><?=$article[0]['nom_article']?></h1>
     <p><?=$article[0]['contenu_article']?></p>
     <p><?=$article[0]['date_article']?></p>
+    <?php 
+    include("../views/comment.php")
+    ?>
 </body>
 </html>
